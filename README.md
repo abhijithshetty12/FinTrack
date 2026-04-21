@@ -1,60 +1,82 @@
-# FinTrack
+# 💰 FinTrack — Personal Finance Tracker
 
-## Overview
-Personal finance tracker web app built with Flask and MySQL. Track your income and expenses, categorize transactions, view interactive dashboards and charts.
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)
+![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=flat&logo=python&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat&logo=chartdotjs&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 
-## Features
-- **User Authentication**: Secure register/login system
-- **Transaction Management**: Add, edit, delete, search/filter transactions
-- **Categories**: Organize expenses by category (Food, Transport, etc.)
-- **Dashboard**: Real-time income, expense, balance overview
-- **Interactive Charts**: Pie charts for category breakdown, bar charts for monthly trends
-- **Responsive Design**: Works on desktop and mobile
+**FinTrack** is a sleek, lightweight web application designed to help you take control of your financial life. Built with a robust Flask backend and a responsive vanilla JS frontend, it offers real-time insights into your spending habits through interactive visualizations.
 
-## Screenshots
-### Light Theme
-![Dashboard - Light](screenshots/dashboard-light.png)
+---
 
-### Dark Theme
-![Dashboard - Dark](screenshots/dashboard-dark.png)
+## ✨ Key Features
 
-## Local Setup
+* **🔐 Secure Authentication** — Robust register/login system to keep your financial data private.
+* **📊 Dynamic Dashboard** — Instant overview of your total balance, monthly income, and expenses.
+* **📈 Interactive Analytics** — Powered by **Chart.js**, visualize category breakdowns (Pie) and monthly trends (Bar).
+* **📂 Smart Categorization** — Organize transactions into custom categories like Food, Transport, and Utilities.
+* **📱 Fully Responsive** — Manage your budget seamlessly across Desktop, Tablet, and Mobile.
+* **🔍 Advanced Filtering** — Search through history or filter by date and category with ease.
 
-### Prerequisites
-- Python 3.8+
-- MySQL Server running on localhost
-- MySQL client (Workbench, phpMyAdmin, etc.)
+---
 
-### Database Setup
-1. Create database: `CREATE DATABASE finance_db;`
-2. Run the schema: Execute `db.sql` file in your MySQL client to create `Users` and `Transactions` tables.
+## 📸 Product Showroom
 
-### Application Setup
-1. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-2. (Optional) Update database credentials in `app.py`:
-   ```python
-   host="localhost",
-   user="root",
-   password="your_password",
-   database="finance_db"
-   ```
-3. Run the application:
-   ```
-   python app.py
-   ```
-4. Open your browser: **http://127.0.0.1:5000/**
+| Light Mode                                          | Dark Mode                                           |
+| :-------------------------------------------------- | :-------------------------------------------------- |
+| <img src="screenshots/dashboard-light.png" width="100%" /> | <img src="screenshots/dashboard-dark.png" width="100%" /> |
 
-### Usage
-1. Register a new account
-2. Login
-3. Add income/expense transactions
-4. View dashboard and charts
-5. Filter/search transactions
+---
 
-## Tech Stack
-- **Backend**: Flask, MySQL
-- **Frontend**: HTML/CSS/JavaScript (vanilla)
-- **Features**: Charts.js (via CDN)
+## 🛠 Tech Stack
+
+| Layer        | Technologies                    |
+| :----------- | :------------------------------ |
+| **Backend**  | Flask (Python), MySQL           |
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
+| **Visuals**  | Chart.js, FontAwesome           |
+| **Security** | Werkzeug Hashing                |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+
+* Python **3.8+**
+* MySQL Server running locally
+
+### 2. Database Configuration
+
+```sql
+-- 1. Create the database
+CREATE DATABASE finance_db;
+
+-- 2. Import the schema
+-- Run the provided db.sql file using your MySQL client
+SOURCE path/to/db.sql;
+```
+
+### 3. Installation & Launch
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/FinTrack.git
+cd FinTrack
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure credentials in app.py
+# host="localhost", user="root", password="your_password"
+
+# Run the server
+python app.py
+```
+
+Visit the app at: **http://127.0.0.1:5000/**
+
+
