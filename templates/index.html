@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/fintrack.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-theme="light">
+    <div id="popup" class="toast"></div>
+
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="main-header">
+            <div class="logo">
+                <img src="/static/fintrack.png" alt="FinTrack Logo">
+
+                <h1>FinTrack<span id="userBadge" class="user-badge" style="display:none;">@<span id="displayUsername"></span></span></h1>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="icon-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                    <i data-lucide="sun" id="sunIcon"></i>
+                    <i data-lucide="moon" id="moonIcon" style="display:none;"></i>
+                </button>
+                <div id="authSection" class="auth-group">
+                    <div class="login-inputs" id="loginInputs">
+                        <input id="username" placeholder="Username">
+                        <input id="password" type="password" placeholder="Password">
+                        <button class="btn-primary" onclick="loginUser()">Login</button>
+                        <button class="btn-secondary" onclick="registerUser()">Register</button>
+                    </div>
+                    <button id="logoutBtn" class="btn-danger" onclick="logoutUser()" style="display:none;">
+                        <i data-lucide="log-out"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN DASHBOARD -->
+        <main class="dashboard-grid">
+            <!-- STATS SECTION -->
+            <section class="stats-section">
+                <div class="stat-card income">
+                    <div class="stat-icon"><i data-lucide="trending-up"></i></div>
+                    <div class="stat-info">
+                        <span>Total Income</span>
+                        <h2 id="income">₹0</h2>
+                    </div>
+                </div>
+                <div class="stat-card expense">
+                    <div class="stat-icon"><i data-lucide="trending-down"></i></div>
+                    <div class="stat-info">
+                        <span>Total Expense</span>
+                        <h2 id="expense">₹0</h2>
+                    </div>
+                </div>
+                <div class="stat-card balance">
+                    <div class="stat-icon"><i data-lucide="scale"></i></div>
+                    <div class="stat-info">
+                        <span>Current Balance</span>
+                        <h2 id="balance">₹0</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRANSACTIONS LIST -->
+            <section class="transactions-section card">
+                <div class="card-header">
+                    <h3>Recent Transactions</h3>
+                    <div class="filter-group">
+                        <select id="filterType" onchange="loadData()">
+                            <option value="">All Types</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="transactions-container" id="transactionList">
+                    <!-- Transactions injected here -->
+                    <div class="empty-state">
+                        <i data-lucide="receipt"></i>
+                        <p>Login to see your transactions</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ANALYTICS SECTION -->
+            <section class="analytics-section card">
+                <div class="card-header">
+                    <h3>Analytics</h3>
+                </div>
+                <div class="charts-grid">
+                    <div class="chart-box">
+                        <canvas id="pieChart1"></canvas>
+                    </div>
+                    <div class="chart-box">
+                        <canvas id="pieChart2"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ADD TRANSACTION SECTION -->
+            <section class="add-section card">
+                <div class="card-header">
+                    <h3>Quick Add</h3>
+                </div>
+                <div class="add-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Category</label>
+                            <input id="category" placeholder="e.g. Food, Salary">
+                        </div>
+                        <div class="input-group">
+                            <label>Amount</label>
+                            <input id="amount" type="number" placeholder="0.00">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Type</label>
+                            <select id="type">
+                                <option value="expense">Expense</option>
+                                <option value="income">Income</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Date</label>
+                            <input id="date" type="date">
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full" onclick="addTransaction()">
+                        <i data-lucide="plus"></i> Add Transaction
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script>
+        // Initialize icons
+        lucide.createIcons();
+    </script>
+
+    <footer style="background: var(--bg-secondary, #f8f9fa); padding: 1rem; text-align: center; border-top: 1px solid var(--border, #e9ecef); color: var(--text-secondary, #6c757d); font-size: 0.875rem; margin-top: auto;">
+        © 2026 FinTrack. All rights reserved.
+    </footer>
+</body>
+
+</html>
