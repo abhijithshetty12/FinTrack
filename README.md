@@ -58,5 +58,3 @@ Personal finance tracker web app built with Flask and MySQL. Track your income a
 - **Backend**: Flask, MySQL
 - **Frontend**: HTML/CSS/JavaScript (vanilla)
 - **Features**: Charts.js (via CDN)
-
-© 2026 FinTrack. All rights reserved.
