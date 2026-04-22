@@ -7,10 +7,10 @@ CORS(app)
 
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="finance_db"
+        host="mysql-1feceda-abhijithshetty2008-9ab9.h.aivencloud.com",
+        user="avnadmin",
+        password="AVNS_IEIIV2idk8dCIsIRfL_",
+        database="defaultdb"
     )
 
 @app.route('/')
